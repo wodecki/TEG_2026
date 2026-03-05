@@ -1,0 +1,26 @@
+.DS_Store
+.env
+.mcp.json
+
+# Python virtual environments
+.venv/
+venv/
+env/
+.uv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+*.pyc
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Local development settings
+.env
+.env.local
+node_modules
