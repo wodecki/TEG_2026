@@ -1,0 +1,20 @@
+[project]
+name = "4-chains"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "langchain-community>=0.3.0",
+    "langchain-core>=0.3.0",
+    "langchain-openai>=0.3.0",
+    "langgraph>=0.6.0",
+    "nest-asyncio>=1.6.0",
+    "pillow>=10.0.0",
+    "pydantic>=2.0.0",
+    "pyppeteer>=1.0.0",
+    "python-dotenv>=1.0.0",
+    "tavily-python>=0.5.0",
+    "typing-extensions>=4.0.0",
+    "wikipedia>=1.4.0",
+]

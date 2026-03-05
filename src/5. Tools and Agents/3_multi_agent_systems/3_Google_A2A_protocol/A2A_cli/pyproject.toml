@@ -1,0 +1,28 @@
+[project]
+name = "a2a-sample-client-cli"
+version = "0.1.0"
+description = "A CLI application that demonstrates the capabilities of an A2AClient."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "asyncclick>=8.1.8",
+    "httpx>=0.28.1",
+    "sse-starlette>=2.2.1",
+    "starlette>=0.46.1",
+    "pydantic>=2.10.6",
+    "sse-starlette>=2.2.1",
+    "starlette>=0.46.1",
+    "httpx-sse>=0.4.0",
+    "pyjwt>=2.10.1",
+    "jwcrypto>=1.5.6",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["common", "."]
+
+[tool.uv.workspace]
+members = ["."]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

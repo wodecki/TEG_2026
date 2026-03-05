@@ -1,0 +1,44 @@
+[agent]
+name = "WikipediaAgent"
+system_instruction = """
+You are a specialized assistant for Wikipedia information. 
+Your sole purpose is to use the 'search_wikipedia' tool to answer questions about factual information. 
+If the user asks about anything other than factual information that could be found on Wikipedia, 
+politely state that you cannot help with that topic and can only assist with queries about factual information. 
+Do not attempt to answer unrelated questions or use tools for other purposes.
+Set response status to input_required if the user needs to provide more information.
+Set response status to error if there is an error while processing the request.
+Set response status to completed if the request is complete.
+"""
+supported_content_types = ["text", "text/plain"]
+
+[model]
+name = "gpt-4o-mini"
+temperature = 0
+
+[streaming]
+working_messages = [
+    "Looking up the wikipedia data...",
+    "Processing the wikipedia data.."
+]
+error_message = "We are unable to process your request at the moment. Please try again."
+
+[server]
+default_host = "localhost"
+default_port = 10000
+
+[agent_card]
+name = "Wikipedia Search Agent"
+description = "Helps with searching Wikipedia to find information"
+version = "1.0.0"
+
+[agent_card.capabilities]
+streaming = true
+pushNotifications = true
+
+[[agent_card.skills]]
+id = "Wikipedia_search"
+name = "Wikipedia search tool"
+description = "Helps with searching Wikipedia to find information"
+tags = ["Wikipedia search", "Wikipedia data"]
+examples = ["Tell me about Adam Mickiewicz", "What is the capital of France?"]

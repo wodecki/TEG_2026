@@ -1,0 +1,13 @@
+[project]
+name = "wikipedia-server"
+version = "0.1.0"
+description = "A simple MCP Wikipedia server"
+requires-python = ">=3.10"
+dependencies = [
+    "httpx>=0.28.1",
+    "mcp>=1.2.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

@@ -1,0 +1,17 @@
+[project]
+name = "multi-agent-react"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "arxiv>=2.2.0",
+    "langchain-community>=0.3.29",
+    "langchain-openai>=0.3.32",
+    "langgraph>=0.6.6",
+    "langgraph-cli[inmem]>=0.4.1",
+    "langgraph-supervisor>=0.0.29",
+    "pyowm>=3.5.0",
+    "python-dotenv>=1.1.1",
+    "wikipedia>=1.4.0",
+]

@@ -1,0 +1,13 @@
+[project]
+name = "teg-2025-elearning"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "openai>=1.109.1",
+    "python-dotenv>=1.1.1",
+]
+
+[tool.uv.workspace]
+members = [
+    "src/4. Chains",
+]

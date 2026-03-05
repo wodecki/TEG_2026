@@ -1,0 +1,31 @@
+# Isaac Newton (1642-1727)
+
+Sir Isaac Newton was an English mathematician, physicist, astronomer, theologian, and author widely recognized as one of the most influential scientists of all time and a key figure in the scientific revolution. His book "Philosophiæ Naturalis Principia Mathematica" (Mathematical Principles of Natural Philosophy), first published in 1687, laid the foundations of classical mechanics.
+
+## Early Life and Education
+
+Newton was born on January 4, 1643 (December 25, 1642, Old Style) in Woolsthorpe-by-Colsterworth, a hamlet in Lincolnshire, England. He was born prematurely and was a small child; his mother Hannah Ayscough reportedly said that he could have fit inside a quart mug. When Newton was three, his mother remarried and went to live with her new husband, leaving Newton in the care of his maternal grandmother.
+
+Newton attended The King's School in Grantham, where he became the top-ranked student. In June 1661, he was admitted to Trinity College, Cambridge, where he studied the standard curriculum but was fascinated by advanced science and mathematics. In 1665, he received his bachelor's degree. When the Great Plague forced Cambridge to close, Newton returned home and during this period developed his theories on calculus, optics, and the law of gravitation.
+
+## Scientific Achievements
+
+- **Laws of Motion**: Newton's three laws of motion form the basic principles of modern physics.
+- **Universal Gravitation**: Newton formulated the law of universal gravitation, explaining that all bodies in the universe attract each other with a force directly proportional to the product of their masses and inversely proportional to the square of the distance between them.
+- **Calculus**: Independently developed calculus as a mathematical tool to explain the changing world, though controversy exists over whether Gottfried Wilhelm Leibniz developed it independently around the same time.
+- **Optics**: Discovered that white light is composed of a spectrum of colors and invented the reflecting telescope.
+- **Mathematics**: Made contributions to power series, generalized the binomial theorem, and developed a method for approximating the roots of a function.
+
+## Later Life and Positions
+
+In 1669, Newton became the Lucasian Professor of Mathematics at Cambridge. In his later years, he served as Warden and then Master of the Royal Mint, and as President of the Royal Society. He was knighted by Queen Anne in 1705, becoming the second scientist to be knighted.
+
+## Personal Life and Character
+
+Newton never married and had no known romantic relationships. He was deeply religious, though his theological views were unorthodox and kept largely private. He devoted significant time to the study of alchemy and biblical chronology, areas that are less discussed in the context of his scientific legacy.
+
+Known for his difficult personality, Newton engaged in bitter disputes with several contemporaries, most notably with Leibniz over the development of calculus. He suffered a nervous breakdown in 1693, which may have been due to chronic mercury poisoning from his alchemical research or exhaustion from overwork.
+
+## Legacy
+
+Newton died on March 31, 1727, in London and was buried in Westminster Abbey. His work unified the phenomena of earthly mechanics and celestial motion for the first time, establishing a framework for modern physics and astronomy that remained unchallenged until Einstein's work in the early 20th century. Beyond his scientific work, Newton's methodological approaches to investigation have profoundly influenced the way science is conducted to this day.

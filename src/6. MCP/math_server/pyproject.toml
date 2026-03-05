@@ -1,0 +1,12 @@
+[project]
+name = "math-server"
+version = "0.1.0"
+description = "A simple MCP math server"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.2.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

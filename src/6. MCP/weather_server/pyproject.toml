@@ -1,0 +1,14 @@
+[project]
+name = "weather-server"
+version = "0.1.0"
+description = "MCP weather server using OpenWeatherMap API"
+requires-python = ">=3.10"
+dependencies = [
+    "httpx>=0.28.1",
+    "mcp>=1.2.0",
+    "python-dotenv>=1.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

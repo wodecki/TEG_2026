@@ -1,0 +1,71 @@
+services:
+  neo4j:
+    image: neo4j:latest
+    container_name: neo4j-graphrag
+    restart: unless-stopped
+    ports:
+      - "7474:7474"  # HTTP interface for Neo4j Browser
+      - "7687:7687"  # Bolt protocol for applications
+    environment:
+      # Authentication (username: neo4j, password: password123)
+      - NEO4J_AUTH=neo4j/password123
+
+      # Plugins
+      - NEO4J_PLUGINS=["apoc"]
+
+      # Security settings for APOC procedures
+      - NEO4J_dbms_security_procedures_unrestricted=apoc.*
+      - NEO4J_dbms_security_procedures_allowlist=apoc.*
+
+      # File import/export settings
+      - NEO4J_apoc_export_file_enabled=true
+      - NEO4J_apoc_import_file_enabled=true
+      - NEO4J_apoc_import_file_use__neo4j__config=true
+
+      # Memory settings optimized for educational use
+      - NEO4J_dbms_memory_heap_initial__size=512m
+      - NEO4J_dbms_memory_heap_max__size=1G
+      - NEO4J_dbms_memory_pagecache_size=512m
+
+      # Browser configuration
+      - NEO4J_browser_remote__content__hostname__whitelist=*
+      - NEO4J_browser_post__connect__cmd=config
+
+      # Logging
+      - NEO4J_dbms_logs_query_enabled=INFO
+
+    volumes:
+      # Persistent storage volumes (using existing volume names)
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+      - neo4j_import:/var/lib/neo4j/import
+      - neo4j_plugins:/plugins
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --tries=1 --spider http://localhost:7474 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+    networks:
+      - graphrag-network
+
+volumes:
+  # Named volumes for persistence across container restarts
+  neo4j_data:
+    external: true
+    name: 06_graphrag_neo4j_data
+  neo4j_logs:
+    external: true
+    name: 06_graphrag_neo4j_logs
+  neo4j_import:
+    external: true
+    name: 06_graphrag_neo4j_import
+  neo4j_plugins:
+    external: true
+    name: 06_graphrag_neo4j_plugins
+
+networks:
+  graphrag-network:
+    driver: bridge

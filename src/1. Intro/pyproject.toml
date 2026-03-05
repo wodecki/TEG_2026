@@ -1,0 +1,14 @@
+[project]
+name = "2-llms"
+version = "0.1.0"
+description = "Basic interactions with LLMs"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "anthropic>=0.68.1",
+    "langchain-anthropic>=0.3.20",
+    "langchain-openai>=0.3.33",
+    "openai>=1.0.0",
+    "python-dotenv>=1.0.0",
+    "streamlit>=1.50.0",
+]

@@ -1,0 +1,96 @@
+{
+  "test_suite": {
+    "description": "Test questions targeting key weaknesses of naive RAG vs GraphRAG advantages",
+    "categories": {
+      "counting": {
+        "description": "Exact counting queries - impossible for naive RAG, perfect for GraphRAG",
+        "questions": [
+          "How many people have Python programming skills?",
+          "How many people have worked at Google?",
+          "What is the total number of people with AWS certifications?",
+          "How many people have Master's degrees?",
+          "How many people are located in San Francisco?",
+          "How many people have both Docker and Kubernetes skills?"
+        ]
+      },
+      "filtering": {
+        "description": "Multi-criteria filtering - difficult for naive RAG, natural for GraphRAG",
+        "questions": [
+          "List all people who have both React and Node.js skills",
+          "Find all developers with more than 5 years of Python experience",
+          "Show me people who have AWS certifications and work with cloud technologies",
+          "Find all people who studied Computer Science and have industry experience",
+          "List people who worked at both startups and large companies",
+          "Find all senior developers with leadership experience"
+        ]
+      },
+      "aggregation": {
+        "description": "Statistical calculations - impossible for naive RAG, straightforward for GraphRAG",
+        "questions": [
+          "What is the average years of experience across all candidates?",
+          "What is the most common programming language skill?",
+          "What is the average number of skills per person?",
+          "Which city has the most candidates?",
+          "What percentage of people have cloud certifications?",
+          "What is the most frequently mentioned company?"
+        ]
+      },
+      "sorting": {
+        "description": "Ranking and ordering - very difficult for naive RAG, natural for GraphRAG",
+        "questions": [
+          "Who are the top 3 most experienced developers?",
+          "List the 5 people with the most programming languages",
+          "Rank all candidates by their number of certifications",
+          "Who has the most diverse skill set?",
+          "List people in order of their career progression",
+          "Which candidates have the most company experience?"
+        ]
+      },
+      "multi_hop_reasoning": {
+        "description": "Relationship traversal - impossible for naive RAG, core strength of GraphRAG",
+        "questions": [
+          "Find all pairs of people who attended the same university",
+          "Which people have worked at the same companies?",
+          "Find developers who have complementary skills for a full-stack team",
+          "Identify people who could mentor others based on shared skills",
+          "Find all connections between people through shared employers",
+          "Which people have similar career paths?"
+        ]
+      },
+      "temporal_reasoning": {
+        "description": "Date and time-based queries - difficult for naive RAG, natural for GraphRAG",
+        "questions": [
+          "Who graduated most recently?",
+          "Find people who started their careers in the same year",
+          "Which certifications were obtained in the last 2 years?",
+          "Who has the longest tenure at a single company?",
+          "Find people who changed careers after 2020",
+          "Which candidates have the most recent work experience?"
+        ]
+      },
+      "complex_combinations": {
+        "description": "Multi-dimensional queries combining several criteria",
+        "questions": [
+          "Find Python developers with AWS certifications who studied at top universities",
+          "List all senior developers with both frontend and backend skills",
+          "Find people with machine learning skills who worked at tech companies",
+          "Identify candidates with both technical skills and business experience",
+          "Find full-stack developers with startup experience and advanced degrees",
+          "List all candidates suitable for a DevOps role based on their skills and experience"
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "total_questions": 42,
+    "created_for": "GraphRAG vs Naive RAG comparison",
+    "data_source": "CV knowledge graph built from PDF resumes",
+    "ground_truth_method": "GPT-5 with full CV context",
+    "evaluation_criteria": [
+      "Accuracy of answers",
+      "Completeness of results",
+      "Precision of numerical values",
+      "Ability to handle query type"
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+# GraphRAG Data Generation Configuration
+# ====================================
+#
+# This file controls all parameters for the data generation process.
+# Simply modify the values below and run: uv run python 1_generate_data.py
+#
+# Example configurations:
+# - Small test: num_programmers=3, num_projects=5, num_rfps=1
+# - Production: num_programmers=10, num_projects=20, num_rfps=3
+# - Large demo: num_programmers=50, num_projects=100, num_rfps=10
+
+[generation]
+# Number of programmer profiles to generate
+num_programmers = 30
+
+# Number of project records to generate
+num_projects = 10
+
+# Number of RFP documents to generate
+num_rfps = 3
+
+[assignment]
+# Probability that a project gets programmer assignments (0.0 - 1.0)
+# Lower values leave more programmers available for new projects
+assignment_probability = 0.8
+
+# Range of days before project end that assignments should end
+assignment_end_days_before_min = 1
+assignment_end_days_before_max = 30
+
+[project_requirements]
+# Range of skill requirements per project
+min_requirements = 2
+max_requirements = 5
+
+# Probability that a requirement is mandatory vs optional (0.0 - 1.0)
+mandatory_probability = 0.5
+
+[skills]
+# Available proficiency levels (Expert removed for better matching)
+proficiency_levels = ["Beginner", "Intermediate", "Advanced"]
+
+# Proficiency distribution weights for programmer skills
+# [Beginner, Intermediate, Advanced, Expert]
+proficiency_weights = [10, 40, 35, 15]
+
+[output]
+# Output directories for different file types
+programmers_dir = "data/programmers"    # CV PDFs and programmer profiles JSON
+rfps_dir = "data/RFP"                   # RFP PDFs and RFPs JSON
+projects_dir = "data/projects"          # Projects JSON

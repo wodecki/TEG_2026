@@ -1,0 +1,21 @@
+{
+  "dependencies": [
+    ".",
+    "langchain-openai",
+    "langgraph",
+    "python-dotenv"
+  ],
+  "graphs": {
+    "graph_based_agent": {
+      "path": "01_graph_based_agent.py:create_tool_executor_graph",
+      "title": "Graph-Based Tool Executor",
+      "description": "Educational progression from basic LLM to full tool executor using LangGraph StateGraph"
+    },
+    "multi_tool_agent": {
+      "path": "02_multi_tool_react_agent.py:create_multi_tool_agent",
+      "title": "Multi-Tool ReAct Agent",
+      "description": "Advanced ReAct agent with simulated external API integration and comprehensive tool suite"
+    }
+  },
+  "env": ".env"
+}

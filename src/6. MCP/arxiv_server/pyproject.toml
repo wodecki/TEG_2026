@@ -1,0 +1,13 @@
+[project]
+name = "arxiv-server"
+version = "0.1.0"
+description = "A simple MCP ArXiv server"
+requires-python = ">=3.10"
+dependencies = [
+    "httpx>=0.28.1",
+    "mcp>=1.2.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

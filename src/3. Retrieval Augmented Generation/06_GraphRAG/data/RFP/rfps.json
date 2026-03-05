@@ -1,0 +1,200 @@
+[
+  {
+    "id": "RFP-001",
+    "title": "API Integration Platform Development",
+    "client": "MedTech Industries",
+    "description": "Seeking experienced development team for mobile app development",
+    "project_type": "Mobile App Development",
+    "duration_months": 19,
+    "team_size": 9,
+    "budget_range": "$500K - $1M",
+    "start_date": "2025-10-04",
+    "requirements": [
+      {
+        "skill_name": "Node.js",
+        "min_proficiency": "Expert",
+        "is_mandatory": true,
+        "preferred_certifications": []
+      },
+      {
+        "skill_name": "Microservices",
+        "min_proficiency": "Expert",
+        "is_mandatory": true,
+        "preferred_certifications": []
+      },
+      {
+        "skill_name": "React",
+        "min_proficiency": "Expert",
+        "is_mandatory": true,
+        "preferred_certifications": [
+          "AWS Certified Solutions Architect"
+        ]
+      },
+      {
+        "skill_name": "Machine Learning",
+        "min_proficiency": "Advanced",
+        "is_mandatory": false,
+        "preferred_certifications": [
+          "AWS Certified Solutions Architect",
+          "Certified Kubernetes Administrator"
+        ]
+      },
+      {
+        "skill_name": "Python",
+        "min_proficiency": "Advanced",
+        "is_mandatory": true,
+        "preferred_certifications": [
+          "Certified Kubernetes Administrator"
+        ]
+      },
+      {
+        "skill_name": "JavaScript",
+        "min_proficiency": "Intermediate",
+        "is_mandatory": true,
+        "preferred_certifications": [
+          "AWS Certified Solutions Architect",
+          "Certified Kubernetes Administrator"
+        ]
+      },
+      {
+        "skill_name": "Django",
+        "min_proficiency": "Intermediate",
+        "is_mandatory": false,
+        "preferred_certifications": [
+          "Certified Kubernetes Administrator"
+        ]
+      },
+      {
+        "skill_name": "PostgreSQL",
+        "min_proficiency": "Expert",
+        "is_mandatory": true,
+        "preferred_certifications": [
+          "AWS Certified Solutions Architect"
+        ]
+      }
+    ],
+    "location": "Douglasfort",
+    "remote_allowed": true
+  },
+  {
+    "id": "RFP-002",
+    "title": "Machine Learning Implementation Development",
+    "client": "MedTech Industries",
+    "description": "Seeking experienced development team for api integration platform",
+    "project_type": "Cloud Migration Project",
+    "duration_months": 19,
+    "team_size": 12,
+    "budget_range": "$100K - $250K",
+    "start_date": "2025-10-04",
+    "requirements": [
+      {
+        "skill_name": "Node.js",
+        "min_proficiency": "Advanced",
+        "is_mandatory": true,
+        "preferred_certifications": []
+      },
+      {
+        "skill_name": "MongoDB",
+        "min_proficiency": "Intermediate",
+        "is_mandatory": false,
+        "preferred_certifications": [
+          "AWS Certified Solutions Architect"
+        ]
+      },
+      {
+        "skill_name": "Python",
+        "min_proficiency": "Intermediate",
+        "is_mandatory": true,
+        "preferred_certifications": [
+          "AWS Certified Solutions Architect",
+          "Certified Kubernetes Administrator"
+        ]
+      },
+      {
+        "skill_name": "AWS",
+        "min_proficiency": "Intermediate",
+        "is_mandatory": false,
+        "preferred_certifications": [
+          "AWS Certified Solutions Architect",
+          "Google Cloud Professional"
+        ]
+      },
+      {
+        "skill_name": "PostgreSQL",
+        "min_proficiency": "Advanced",
+        "is_mandatory": false,
+        "preferred_certifications": []
+      }
+    ],
+    "location": "East Alicia",
+    "remote_allowed": true
+  },
+  {
+    "id": "RFP-003",
+    "title": "Cloud Migration Project Development",
+    "client": "MedTech Industries",
+    "description": "Seeking experienced development team for e-commerce modernization",
+    "project_type": "Security Enhancement",
+    "duration_months": 14,
+    "team_size": 10,
+    "budget_range": "$1M - $2M",
+    "start_date": "2025-10-04",
+    "requirements": [
+      {
+        "skill_name": "Java",
+        "min_proficiency": "Expert",
+        "is_mandatory": true,
+        "preferred_certifications": [
+          "Google Cloud Professional",
+          "Certified Kubernetes Administrator"
+        ]
+      },
+      {
+        "skill_name": "Node.js",
+        "min_proficiency": "Intermediate",
+        "is_mandatory": false,
+        "preferred_certifications": [
+          "Certified Kubernetes Administrator"
+        ]
+      },
+      {
+        "skill_name": "AWS",
+        "min_proficiency": "Advanced",
+        "is_mandatory": true,
+        "preferred_certifications": []
+      },
+      {
+        "skill_name": "PostgreSQL",
+        "min_proficiency": "Expert",
+        "is_mandatory": false,
+        "preferred_certifications": []
+      },
+      {
+        "skill_name": "React",
+        "min_proficiency": "Advanced",
+        "is_mandatory": true,
+        "preferred_certifications": []
+      },
+      {
+        "skill_name": "TypeScript",
+        "min_proficiency": "Advanced",
+        "is_mandatory": false,
+        "preferred_certifications": [
+          "Google Cloud Professional",
+          "AWS Certified Solutions Architect"
+        ]
+      },
+      {
+        "skill_name": "Docker",
+        "min_proficiency": "Advanced",
+        "is_mandatory": true,
+        "preferred_certifications": [
+          "Certified Kubernetes Administrator",
+          "Google Cloud Professional"
+        ]
+      }
+    ],
+    "location": "Michaelside",
+    "remote_allowed": false
+  }
+]

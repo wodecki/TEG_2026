@@ -1,0 +1,21 @@
+[project]
+name = "react-agents"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "arxiv>=2.2.0",
+    "ipykernel>=6.29.5",
+    "pip>=25.1.1",
+    "pyowm>=3.3.0",
+    "setuptools>=80.7.1",
+    "wikipedia>=1.4.0",
+    "langchain>=0.3.25",
+    "langchain-community>=0.3.24",
+    "langchain-openai>=0.3.16",
+    "langgraph>=0.4.3",
+    "langgraph-cli[inmem]>=0.2.10",
+    "openai>=1.78.1",
+    "langgraph-supervisor>=0.0.22",
+]

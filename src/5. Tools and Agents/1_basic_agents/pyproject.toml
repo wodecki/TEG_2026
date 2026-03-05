@@ -1,0 +1,21 @@
+[project]
+name = "basic-agents"
+version = "0.1.0"
+description = "Module 1: Basic Agents - Foundation concepts for AI agents and tools"
+authors = [
+    {name = "TEG 2025", email = "noreply@example.com"}
+]
+dependencies = [
+    "openai>=1.0.0",
+    "langchain-openai>=0.1.0",
+    "langgraph>=0.2.0",
+    "langchain-core>=0.2.0",
+    "python-dotenv>=1.0.0",
+    "langchain>=0.3.27",
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+
+[tool.uv]
+dev-dependencies = []

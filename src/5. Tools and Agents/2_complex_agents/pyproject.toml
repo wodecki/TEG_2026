@@ -1,0 +1,25 @@
+[project]
+name = "complex-agents"
+version = "0.1.0"
+description = "Complex Agents Module - Advanced LangGraph patterns and multi-tool agents"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "langchain>=0.2.0",
+    "langchain-openai>=0.1.0",
+    "langgraph>=0.1.0",
+    "python-dotenv>=1.0.0",
+    "typing-extensions>=4.8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "jupyter>=1.0.0",
+    "ipykernel>=6.0.0",
+]
+studio = [
+    "langgraph-cli>=0.1.0",
+]
+
+[tool.uv]
+dev-dependencies = []

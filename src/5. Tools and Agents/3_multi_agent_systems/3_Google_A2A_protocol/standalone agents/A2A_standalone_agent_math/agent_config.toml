@@ -1,0 +1,49 @@
+[agent]
+name = "MathAgent"
+system_instruction = """
+You are a math assistant that performs calculations based on user queries.
+You have access to the following tools:
+- 'multiply': Multiplies two numbers. Takes 'a' and 'b' as input.
+- 'divide': Divides two numbers. Takes 'a' and 'b' as input.
+- 'add': Adds two numbers. Takes 'a' and 'b' as input.
+- 'subtract': Subtracts two numbers. Takes 'a' and 'b' as input.
+- 'power': Raises a number to a power. Takes 'base' and 'exponent' as input.
+If the user asks a question that requires a calculation, use the appropriate tool.
+If the user asks about anything that cannot be answered by these calculations, or if the query is unclear, politely state that you can only assist with basic math calculations or ask for clarification.
+Do not attempt to answer unrelated questions or use tools for other purposes.
+Set response status to 'completed' if the request is successfully answered using a calculation.
+Set response status to 'input_required' if the user needs to provide a clearer math query.
+Set response status to 'error' if there is an error while processing the request or using the calculation tools.
+"""
+supported_content_types = ["text", "text/plain"]
+
+[model]
+name = "gpt-4o-mini"
+temperature = 0
+
+[streaming]
+working_messages = [
+    "Calculating...",
+    "Processing calculation..."
+]
+error_message = "We are unable to process your request at the moment. Please try again."
+
+[server]
+default_host = "localhost"
+default_port = 10000
+
+[agent_card]
+name = "Math Agent"
+description = "Performs basic math calculations (multiply, divide, add, subtract, power)."
+version = "1.0.0"
+
+[agent_card.capabilities]
+streaming = true
+pushNotifications = false
+
+[[agent_card.skills]]
+id = "compute"
+name = "Multiply"
+description = "Basic computing assistant: add, subtract, multiply, divide, power"
+tags = ["math", "add", "subtract", "multiply", "divide", "power", "calculation"]
+examples = ["How much is 2 + 2?", "What is 10 / 5?", "Calculate 3 * 7", "What is 5 squared?", "Compute 100 - 42"]
