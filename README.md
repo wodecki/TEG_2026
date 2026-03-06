@@ -1,4 +1,4 @@
-# GenAI Course 2025
+# GenAI Course 2026
 
 A comprehensive course on Generative AI—from foundational concepts to advanced implementations with RAG, agents, and workflows.
 
