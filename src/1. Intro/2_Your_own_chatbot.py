@@ -11,12 +11,12 @@ Required environment variables:
 To run the application:
 1. Install dependencies: pip install streamlit openai python-dotenv
 2. Set your OPENAI_API_KEY in .env file
-3. Run: streamlit run 4_Your_own_chatbot.py
+3. Run: streamlit run 2_Your_own_chatbot.py
 4. Open browser to the displayed URL (usually http://localhost:8501)
 
 For public access (optional):
 1. Install localtunnel: npm install -g localtunnel
-2. Run the app: streamlit run 5. Your\ own\ chatbot.py
+2. Run the app: streamlit run 2_Your_own_chatbot.py
 3. In another terminal: npx localtunnel --port 8501
 4. Use the generated URL for public access
 """
