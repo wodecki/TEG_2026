@@ -7,7 +7,6 @@
 ## Step 1: Create Azure OpenAI Resource
 
 1. Go to [Azure Portal](https://portal.azure.com)
-2. Click **Create a resource**
 3. Search for **Azure OpenAI** and select it
 4. Click **Create** > **Foundry**
 5. Fill in:
