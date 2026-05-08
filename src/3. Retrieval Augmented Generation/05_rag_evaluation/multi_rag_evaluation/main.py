@@ -3,7 +3,7 @@ load_dotenv(override=True)
 
 import os
 from pathlib import Path
-from langchain_community.document_loaders import DirectoryLoader
+from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_openai import ChatOpenAI
 
@@ -19,7 +19,12 @@ from config import settings
 
 def load_and_chunk(data_dir):
     """Load and chunk documents for all RAG systems."""
-    loader = DirectoryLoader(data_dir, glob="*.txt")
+    loader = DirectoryLoader(
+        data_dir,
+        glob="*.txt",
+        loader_cls=TextLoader,
+        loader_kwargs={"encoding": "utf-8"},
+    )
     docs = loader.load()
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=settings.CHUNK_SIZE,

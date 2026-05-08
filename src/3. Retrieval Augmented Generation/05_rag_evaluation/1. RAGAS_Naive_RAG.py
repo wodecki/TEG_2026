@@ -4,7 +4,7 @@ load_dotenv(override=True)
 import os
 import json
 from pathlib import Path
-from langchain_community.document_loaders import DirectoryLoader
+from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_core.vectorstores import InMemoryVectorStore
 from langchain_core.prompts import ChatPromptTemplate
@@ -17,7 +17,12 @@ from ragas.llms import LangchainLLMWrapper
 from ragas.dataset_schema import SingleTurnSample
 
 def load_and_chunk(data_dir):
-    loader = DirectoryLoader(data_dir, glob="*.txt")
+    loader = DirectoryLoader(
+        data_dir,
+        glob="*.txt",
+        loader_cls=TextLoader,
+        loader_kwargs={"encoding": "utf-8"},
+    )
     docs = loader.load()
     splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
     return splitter.split_documents(docs)
@@ -57,7 +62,12 @@ Answer:
     return rag_chain, retriever
 
 def generate_ground_truths(questions, data_dir, expert_llm):
-    loader = DirectoryLoader(data_dir, glob="*.txt")
+    loader = DirectoryLoader(
+        data_dir,
+        glob="*.txt",
+        loader_cls=TextLoader,
+        loader_kwargs={"encoding": "utf-8"},
+    )
     docs = loader.load()
     full_context = "\n\n".join([doc.page_content for doc in docs])
 

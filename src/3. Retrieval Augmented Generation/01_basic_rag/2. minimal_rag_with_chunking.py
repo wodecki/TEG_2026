@@ -6,7 +6,7 @@ Enhanced RAG system that splits documents into smaller chunks for better retriev
 This improves retrieval accuracy by creating more focused, searchable text segments.
 """
 
-from langchain_community.document_loaders import DirectoryLoader
+from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_core.vectorstores import InMemoryVectorStore
 from langchain_core.prompts import ChatPromptTemplate
@@ -19,7 +19,12 @@ from dotenv import load_dotenv
 load_dotenv(override=True) 
 
 # Load documents
-loader = DirectoryLoader("data/scientists_bios")
+loader = DirectoryLoader(
+    "data/scientists_bios",
+    glob="*.txt",
+    loader_cls=TextLoader,
+    loader_kwargs={"encoding": "utf-8"},
+)
 docs = loader.load()
 print(f"Loaded {len(docs)} documents")
 

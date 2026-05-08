@@ -1,4 +1,4 @@
-from langchain_community.document_loaders import DirectoryLoader
+from langchain_community.document_loaders import DirectoryLoader, TextLoader
 
 class GroundTruthGenerator:
     """Generate expert-level ground truth answers for evaluation."""
@@ -8,7 +8,12 @@ class GroundTruthGenerator:
 
     def generate_ground_truths(self, questions, data_dir):
         """Generate ground truth answers using expert LLM with complete context."""
-        loader = DirectoryLoader(data_dir, glob="*.txt")
+        loader = DirectoryLoader(
+            data_dir,
+            glob="*.txt",
+            loader_cls=TextLoader,
+            loader_kwargs={"encoding": "utf-8"},
+        )
         docs = loader.load()
         full_context = "\n\n".join([doc.page_content for doc in docs])
 

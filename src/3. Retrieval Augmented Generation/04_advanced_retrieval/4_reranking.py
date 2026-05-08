@@ -6,7 +6,7 @@ Demonstrates cross-encoder re-ranking, LLM-based scoring, and result optimizatio
 techniques to improve retrieval quality after initial search.
 """
 
-from langchain_community.document_loaders import DirectoryLoader
+from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_core.vectorstores import InMemoryVectorStore
 from langchain_core.prompts import ChatPromptTemplate
@@ -26,7 +26,12 @@ print("="*50)
 print("\n1️⃣ Loading documents for re-ranking:")
 
 data_dir = "data/scientists_bios"
-loader = DirectoryLoader(data_dir, glob="*.txt")
+loader = DirectoryLoader(
+    data_dir,
+    glob="*.txt",
+    loader_cls=TextLoader,
+    loader_kwargs={"encoding": "utf-8"},
+)
 documents = loader.load()
 
 # Add metadata

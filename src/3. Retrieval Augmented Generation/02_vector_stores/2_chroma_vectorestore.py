@@ -6,7 +6,7 @@ Demonstrates persistent vector storage with ChromaDB.
 Data is saved to disk and can be reloaded across sessions.
 """
 
-from langchain_community.document_loaders import DirectoryLoader
+from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_chroma import Chroma
 from langchain_core.prompts import ChatPromptTemplate
@@ -30,7 +30,12 @@ def check_existing_collection():
     return False
 
 # Load and prepare documents
-loader = DirectoryLoader("data/scientists_bios")
+loader = DirectoryLoader(
+    "data/scientists_bios",
+    glob="*.txt",
+    loader_cls=TextLoader,
+    loader_kwargs={"encoding": "utf-8"},
+)
 docs = loader.load()
 print(f"Loaded {len(docs)} documents")
 

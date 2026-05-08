@@ -6,7 +6,7 @@ A simple RAG (Retrieval Augmented Generation) system using in-memory vector stor
 This script demonstrates the core RAG concepts without external vector databases.
 """
 
-from langchain_community.document_loaders import DirectoryLoader
+from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_core.vectorstores import InMemoryVectorStore
 from langchain_core.prompts import ChatPromptTemplate
@@ -19,7 +19,12 @@ load_dotenv(override=True) # Load environment variables from .env file, override
 
 # 1. Load documents
 print("Loading documents...")
-loader = DirectoryLoader("data/scientists_bios")
+loader = DirectoryLoader(
+    "data/scientists_bios",
+    glob="*.txt",
+    loader_cls=TextLoader,
+    loader_kwargs={"encoding": "utf-8"},
+)
 docs = loader.load()
 print(f"Loaded {len(docs)} documents")
 

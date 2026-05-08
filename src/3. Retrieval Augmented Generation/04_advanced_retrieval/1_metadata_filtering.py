@@ -6,7 +6,7 @@ Demonstrates how metadata filtering enhances retrieval precision and relevance.
 Shows contextual retrieval strategies using document properties and attributes.
 """
 
-from langchain_community.document_loaders import DirectoryLoader
+from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_core.vectorstores import InMemoryVectorStore
 from langchain_core.prompts import ChatPromptTemplate
@@ -24,7 +24,12 @@ print("\n1️⃣ Loading documents with rich metadata:")
 
 # Load existing scientist documents
 data_dir = "data/scientists_bios"
-loader = DirectoryLoader(data_dir, glob="*.txt")
+loader = DirectoryLoader(
+    data_dir,
+    glob="*.txt",
+    loader_cls=TextLoader,
+    loader_kwargs={"encoding": "utf-8"},
+)
 raw_documents = loader.load()
 
 print(f"   Loaded {len(raw_documents)} raw documents")

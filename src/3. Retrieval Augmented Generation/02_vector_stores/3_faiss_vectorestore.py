@@ -6,7 +6,7 @@ Demonstrates FAISS (Facebook AI Similarity Search) for high-performance vector s
 FAISS is optimized for speed and can handle large-scale similarity search efficiently.
 """
 
-from langchain_community.document_loaders import DirectoryLoader
+from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_core.prompts import ChatPromptTemplate
@@ -30,7 +30,12 @@ def check_existing_index():
 
 # Load and prepare documents
 print("📚 Loading documents...")
-loader = DirectoryLoader("data/scientists_bios")
+loader = DirectoryLoader(
+    "data/scientists_bios",
+    glob="*.txt",
+    loader_cls=TextLoader,
+    loader_kwargs={"encoding": "utf-8"},
+)
 docs = loader.load()
 print(f"Loaded {len(docs)} documents")
 

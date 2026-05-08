@@ -6,7 +6,7 @@ Demonstrates the simplest vector store option - storing embeddings in memory.
 Perfect for development, testing, and small datasets where persistence isn't needed.
 """
 
-from langchain_community.document_loaders import DirectoryLoader
+from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_core.vectorstores import InMemoryVectorStore
 from langchain_core.prompts import ChatPromptTemplate
@@ -18,7 +18,12 @@ from dotenv import load_dotenv
 load_dotenv(override=True)
 
 # Load and chunk documents
-loader = DirectoryLoader("data/scientists_bios")
+loader = DirectoryLoader(
+    "data/scientists_bios",
+    glob="*.txt",
+    loader_cls=TextLoader,
+    loader_kwargs={"encoding": "utf-8"},
+)
 docs = loader.load()
 print(f"Loaded {len(docs)} documents")
 

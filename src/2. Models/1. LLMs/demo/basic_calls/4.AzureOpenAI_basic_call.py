@@ -10,7 +10,7 @@ client = AzureOpenAI(
     api_version="2024-10-21",
 )
 response = client.chat.completions.create(
-    model="gpt-5-nano",
+    model="gpt-5.4-mini",
     messages=[{"role": "user", "content": "What is the capital of France?"}],
 )
 

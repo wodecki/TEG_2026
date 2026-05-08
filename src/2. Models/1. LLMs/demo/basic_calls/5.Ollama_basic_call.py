@@ -5,8 +5,8 @@ client = OpenAI(
     base_url="http://localhost:11434/v1",
 )
 response = client.chat.completions.create(
-    model="gemma3:4b",
-    messages=[{"role": "user", "content": "What is the capital of France?"}],
+    model="gemma3:1b",
+    messages=[{"role": "user", "content": "Dlaczego niebo jest niebieskie?"}],
 )
 
 print(response.choices[0].message.content)

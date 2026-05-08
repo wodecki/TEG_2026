@@ -51,7 +51,12 @@ for i, doc in enumerate(multiple_docs):
 
 # 3. Directory Loading (All Files)
 print("\n3️⃣ Loading entire directory:")
-directory_loader = DirectoryLoader("data/scientists_bios")
+directory_loader = DirectoryLoader(
+    "data/scientists_bios",
+    glob="*.txt",
+    loader_cls=TextLoader,
+    loader_kwargs={"encoding": "utf-8"},
+)
 all_docs = directory_loader.load()
 
 print(f"   Loaded: {len(all_docs)} documents from directory")
@@ -63,7 +68,9 @@ for i, doc in enumerate(all_docs):
 print("\n4️⃣ Loading with glob pattern (*.txt files only):")
 pattern_loader = DirectoryLoader(
     "data/scientists_bios",
-    glob="*.txt"
+    glob="*.txt",
+    loader_cls=TextLoader,
+    loader_kwargs={"encoding": "utf-8"},
 )
 pattern_docs = pattern_loader.load()
 

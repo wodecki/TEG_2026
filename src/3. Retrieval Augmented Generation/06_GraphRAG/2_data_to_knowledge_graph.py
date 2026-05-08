@@ -19,7 +19,7 @@ import logging
 from pathlib import Path
 import toml
 
-from unstructured.partition.pdf import partition_pdf
+from langchain_community.document_loaders import PyPDFLoader
 from langchain_core.documents import Document
 from langchain_experimental.graph_transformers import LLMGraphTransformer
 from langchain_openai import ChatOpenAI
@@ -159,7 +159,7 @@ class DataKnowledgeGraphBuilder:
         logger.info("✓ LLM Graph Transformer initialized with CV schema")
 
     def extract_text_from_pdf(self, pdf_path: str) -> str:
-        """Extract text content from PDF using unstructured.
+        """Extract text content from PDF using PyPDFLoader.
 
         Args:
             pdf_path: Path to the PDF file
@@ -168,12 +168,10 @@ class DataKnowledgeGraphBuilder:
             str: Extracted text content
         """
         try:
-            # Use unstructured to parse PDF
-            elements = partition_pdf(filename=pdf_path)
-
-            # Combine all text elements into single document
-            # This is crucial - processing as single document maintains context
-            full_text = "\n\n".join([str(element) for element in elements])
+            # PyPDFLoader returns one Document per page; concatenate them.
+            # Joining as single document maintains context for graph extraction.
+            pages = PyPDFLoader(pdf_path).load()
+            full_text = "\n\n".join(page.page_content for page in pages)
 
             logger.debug(f"Extracted {len(full_text)} characters from {pdf_path}")
             return full_text
