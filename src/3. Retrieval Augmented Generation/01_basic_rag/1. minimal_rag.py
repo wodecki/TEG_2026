@@ -30,6 +30,7 @@ print(f"Loaded {len(docs)} documents")
 
 # 2. Create embeddings and vector store
 embeddings = OpenAIEmbeddings()
+
 vector_store = InMemoryVectorStore(embeddings)
 vector_store.add_documents(documents=docs)
 
