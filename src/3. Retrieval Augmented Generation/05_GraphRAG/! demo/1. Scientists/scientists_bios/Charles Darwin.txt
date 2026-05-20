@@ -1,0 +1,34 @@
+# Charles Darwin (1809-1882)
+
+Charles Robert Darwin was an English naturalist, geologist, and biologist, best known for his contributions to the science of evolution. His proposition that all species of life have descended from common ancestors is now widely accepted and considered a fundamental concept in science. Darwin published his theory of evolution with compelling evidence in his 1859 book "On the Origin of Species."
+
+## Early Life and Education
+
+Born on February 12, 1809, in Shrewsbury, England, Darwin came from a wealthy and influential family. His father Robert was a doctor, and his grandfather Erasmus Darwin was a renowned botanist. His mother, Susannah Darwin, died when he was only eight years old.
+
+Darwin initially attended the University of Edinburgh Medical School but found surgery distressing and lectures dull. In 1828, he transferred to Christ's College, Cambridge, to study for a Bachelor of Arts degree, with the intention of becoming a clergyman. During his time at Cambridge, Darwin's interest in natural history grew substantially under the mentorship of botany professor John Stevens Henslow.
+
+## The Voyage of the Beagle
+
+Upon Henslow's recommendation, Darwin was offered a position as a naturalist aboard HMS Beagle, which embarked on a five-year survey expedition around the world in December 1831. This voyage would prove to be transformative for Darwin's thinking and career.
+
+During the expedition, Darwin collected numerous specimens and made detailed observations of plants, animals, and geological formations across the globe. His observations of finches in the Galápagos Islands, variations in tortoises, and fossils of extinct animals in South America were particularly influential in shaping his ideas about species adaptation and natural selection.
+
+## Scientific Contributions
+
+- **Theory of Evolution by Natural Selection**: Darwin's most famous contribution was his theory that species evolve over generations through natural selection. He proposed that individuals with traits that help them adapt to their environment are more likely to survive and reproduce, passing these traits to offspring.
+- **Sexual Selection**: Darwin extended his evolutionary theory to explain how certain traits evolved not for survival but for mating advantages.
+- **Geological Works**: He made significant contributions to understanding coral reefs, volcanic islands, and the geology of South America.
+- **Botanical Studies**: Later in life, Darwin conducted extensive research on plant movements and adaptations, including studies on climbing plants and insectivorous plants.
+
+## Personal Life
+
+In 1839, Darwin married his first cousin Emma Wedgwood, with whom he had ten children. The Darwins moved to Down House in Kent in 1842, where Charles would live for the rest of his life. Darwin suffered from chronic illness throughout much of his adult life, which some speculate may have been Chagas disease contracted during the Beagle voyage, or possibly a psychosomatic condition.
+
+Darwin was aware that his evolutionary theory would be controversial, particularly in religious circles, and he delayed publishing it for many years. He was finally spurred to publish when Alfred Russel Wallace independently conceived a similar theory.
+
+## Legacy
+
+Darwin died on April 19, 1882, and was buried in Westminster Abbey, an honor reflecting his national status. His work fundamentally changed how we understand the natural world and our place in it. Darwin's ideas have been applied far beyond biology, influencing fields such as psychology, economics, and computer science.
+
+The concept of "Darwinism" has been extended beyond the scientific realm, sometimes controversially. However, the core of Darwin's scientific legacy—evolution through natural selection—remains one of the most substantiated theories in modern science, supported by evidence from fields that didn't exist in Darwin's time, such as genetics and molecular biology.

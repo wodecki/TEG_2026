@@ -1,0 +1,35 @@
+# Ada Lovelace (1815-1852)
+
+Augusta Ada King, Countess of Lovelace (née Byron), was an English mathematician and writer, chiefly known for her work on Charles Babbage's proposed mechanical general-purpose computer, the Analytical Engine. She is often regarded as the world's first computer programmer, having published the first algorithm intended to be processed by a machine.
+
+## Early Life and Education
+
+Ada Lovelace was born on December 10, 1815, in London, England. She was the only legitimate child of the poet Lord Byron and his wife Anne Isabella Milbanke, a mathematically inclined heiress and philanthropist. Ada's parents separated when she was just one month old, and she never met her father, who died in Greece when she was eight years old.
+
+Ada's mother, determined that her daughter would not develop the "insanity" or poetic temperament of Byron, ensured Ada received a rigorous education focused on mathematics and science, which was unusual for women in the 19th century. Her tutors included Mary Somerville, a Scottish astronomer and mathematician, and Augustus De Morgan, a professor of mathematics at the University of London.
+
+## Collaboration with Charles Babbage
+
+In 1833, at the age of 17, Ada was introduced to Charles Babbage at a social event. Babbage had already designed a mechanical calculator called the Difference Engine and was working on a more complex machine, the Analytical Engine. Lovelace was deeply intrigued by Babbage's work.
+
+In 1842-43, Lovelace translated an Italian article about Babbage's Analytical Engine written by Luigi Menabrea, a young Italian engineer. At Babbage's suggestion, she added her own extensive notes to the translation, which ended up being three times longer than the original article.
+
+## The First Computer Program
+
+In her notes, Lovelace described how codes could be created for the Analytical Engine to handle letters and symbols as well as numbers. Most significantly, she published an algorithm for the Analytical Engine to compute Bernoulli numbers, which is considered the first published computer program. 
+
+Lovelace's notes also included visionary insights about the potential of computing machines. She speculated that such devices could be used to create music, produce graphics, and have applications beyond pure calculation, concepts that wouldn't be realized for another century.
+
+## Personal Life
+
+In 1835, Ada married William King, who became the Earl of Lovelace three years later, giving Ada the title of Countess of Lovelace. They had three children together: Byron, Anne Isabella, and Ralph Gordon.
+
+Throughout her adult life, Lovelace struggled with health issues and developed dependencies on opium and morphine prescribed for her ailments. She also had interests in what she termed "poetical science," seeking to integrate intuition and imagination with mathematics and science.
+
+## Legacy and Death
+
+Ada Lovelace died at the young age of 36 on November 27, 1852, from uterine cancer. She was buried, at her request, next to her father at the Church of St. Mary Magdalene in Hucknall, Nottinghamshire.
+
+For nearly a century after her death, Lovelace's contributions were largely forgotten. However, in the mid-20th century, her notes on the Analytical Engine were republished, and her pioneering role in computing was recognized. Today, Ada Lovelace is celebrated as a visionary in computer science and as a symbol for women in technology.
+
+Ada Lovelace Day, established in 2009, is an international celebration of the achievements of women in science, technology, engineering, and mathematics (STEM). The programming language Ada, created by the U.S. Department of Defense, was named after her in recognition of her early contributions to computing.
