@@ -212,7 +212,7 @@ if cross_encoders:
             print(f"      {i+1}. {scientist} (score: {score:.3f}): {preview}")
 
 # Test LLM re-ranking
-llm = ChatOpenAI(model="gpt-5-nano")
+llm = ChatOpenAI(model="gpt-5.4-mini")
 print(f"\n   🤖 LLM relevance scoring:")
 llm_reranked = llm_relevance_scoring(test_query, documents_only[:4], llm)
 for i, (doc, score) in enumerate(llm_reranked):

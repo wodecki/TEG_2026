@@ -98,7 +98,7 @@ for i, (doc, score) in enumerate(similar_docs_with_scores, 1):
 
 # Create RAG chain
 print("\n🔗 Creating RAG chain with FAISS...")
-llm = ChatOpenAI(model="gpt-4o-mini")
+llm = ChatOpenAI(model="gpt-5.4-mini")
 
 prompt = ChatPromptTemplate.from_template("""
 You are an assistant for question-answering tasks.

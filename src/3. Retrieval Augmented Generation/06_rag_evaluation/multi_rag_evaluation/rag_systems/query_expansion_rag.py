@@ -29,7 +29,7 @@ Original query: {query}
 Return only the alternative queries, one per line, without numbering or explanation:
 """)
 
-        llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.3)
+        llm = ChatOpenAI(model="gpt-5.4-mini", temperature=0.3)
         chain = expansion_prompt | llm | StrOutputParser()
 
         max_variations = self.config.get("MAX_QUERY_VARIATIONS", 3)
@@ -101,7 +101,7 @@ Return only the alternative queries, one per line, without numbering or explanat
 
         self.retriever = query_expansion_retriever
 
-        llm = ChatOpenAI(model=self.config.get("RAG_MODEL", "gpt-4o-mini"))
+        llm = ChatOpenAI(model=self.config.get("RAG_MODEL", "gpt-5.4-mini"))
 
         prompt = ChatPromptTemplate.from_template("""
 You are an assistant for question-answering tasks.

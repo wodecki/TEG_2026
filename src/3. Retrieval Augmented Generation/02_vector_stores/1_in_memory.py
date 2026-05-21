@@ -60,7 +60,7 @@ for i, doc in enumerate(similar_docs, 1):
 
 # Create RAG chain
 print("\n🔗 Creating RAG chain...")
-llm = ChatOpenAI(model="gpt-4o-mini")
+llm = ChatOpenAI(model="gpt-5.4-mini")
 
 prompt = ChatPromptTemplate.from_template("""
 You are an assistant for question-answering tasks.

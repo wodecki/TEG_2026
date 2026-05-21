@@ -11,7 +11,7 @@ bios_dir = Path(__file__).parent / "scientists_bios"
 bios = [Document(page_content=f.read_text()) for f in sorted(bios_dir.glob("*.txt"))]
 
 transformer = LLMGraphTransformer(
-    llm=ChatOpenAI(model="gpt-4o", temperature=0),
+    llm=ChatOpenAI(model="gpt-5.4-mini", temperature=0),
     allowed_nodes=["Scientist", "Field", "Country", "Institution", "Discovery", "Award"],
     allowed_relationships=[
         ("Scientist", "WORKED_IN", "Field"),
@@ -20,6 +20,7 @@ transformer = LLMGraphTransformer(
         ("Scientist", "DISCOVERED", "Discovery"),
         ("Scientist", "WON", "Award"),
         ("Scientist", "INFLUENCED", "Scientist"),
+        ("Scientist", "COLLABORATED_WITH", "Scientist"),
     ],
 )
 

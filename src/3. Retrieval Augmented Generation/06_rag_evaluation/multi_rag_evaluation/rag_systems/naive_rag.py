@@ -24,7 +24,7 @@ class NaiveRAG(BaseRAG):
             search_kwargs={"k": self.config.get("TOP_K", 3)}
         )
 
-        llm = ChatOpenAI(model=self.config.get("RAG_MODEL", "gpt-4o-mini"))
+        llm = ChatOpenAI(model=self.config.get("RAG_MODEL", "gpt-5.4-mini"))
 
         prompt = ChatPromptTemplate.from_template("""
 You are an assistant for question-answering tasks.

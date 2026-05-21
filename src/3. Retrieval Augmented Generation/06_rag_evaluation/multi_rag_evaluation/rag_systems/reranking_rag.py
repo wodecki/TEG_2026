@@ -62,7 +62,7 @@ Document: {document}
 Provide only a numeric score (1-10):
 """)
 
-        llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+        llm = ChatOpenAI(model="gpt-5.4-mini", temperature=0)
         chain = relevance_prompt | llm | StrOutputParser()
 
         scored_documents = []
@@ -117,7 +117,7 @@ Provide only a numeric score (1-10):
 
         self.retriever = reranking_retriever
 
-        llm = ChatOpenAI(model=self.config.get("RAG_MODEL", "gpt-4o-mini"))
+        llm = ChatOpenAI(model=self.config.get("RAG_MODEL", "gpt-5.4-mini"))
 
         prompt = ChatPromptTemplate.from_template("""
 You are an assistant for question-answering tasks.

@@ -32,7 +32,7 @@ Question: {question}""",
 )
 
 chain = GraphCypherQAChain.from_llm(
-    llm=ChatOpenAI(model="gpt-4o", temperature=0),
+    llm=ChatOpenAI(model="gpt-5.4-mini", temperature=0),
     graph=graph,
     cypher_prompt=cypher_prompt,
     verbose=True,

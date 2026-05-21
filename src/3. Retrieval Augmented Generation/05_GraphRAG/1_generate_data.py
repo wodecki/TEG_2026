@@ -40,7 +40,7 @@ class GraphRAGDataGenerator:
 
         # Initialize LLM
         self.llm = ChatOpenAI(
-            model="gpt-4o-mini",
+            model="gpt-5.4-mini",
             temperature=0.7,
             api_key=api_key
         )

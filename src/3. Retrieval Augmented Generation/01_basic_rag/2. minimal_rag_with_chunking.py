@@ -52,7 +52,7 @@ retriever = vector_store.as_retriever(
 )
 
 # Initialize LLM and prompt
-llm = ChatOpenAI(model="gpt-5-nano")
+llm = ChatOpenAI(model="gpt-5.4-mini")
 
 prompt = ChatPromptTemplate.from_template("""
 You are an assistant for question-answering tasks.

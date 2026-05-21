@@ -118,7 +118,7 @@ class DataKnowledgeGraphBuilder:
         """Setup LLM and graph transformer with CV-specific schema."""
         # Initialize LLM - using GPT-4o-mini for cost efficiency
         self.llm = ChatOpenAI(
-            model="gpt-4o-mini",
+            model="gpt-5.4-mini",
             temperature=0,
             api_key=os.getenv("OPENAI_API_KEY")
         )

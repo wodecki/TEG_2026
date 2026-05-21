@@ -37,7 +37,7 @@ class GroundTruthGenerator:
         """Initialize the ground truth generator."""
         # Use GPT-4.1 for performance comparison
         self.llm = ChatOpenAI(
-            model="gpt-4.1",
+            model="gpt-5.4-mini",
             max_tokens=4096,
             api_key=os.getenv("OPENAI_API_KEY")
         )
@@ -152,7 +152,7 @@ Answer (concise, direct):"""
                 "ground_truth_answer": ground_truth_answer,
                 "context_tokens_estimate": int(context_tokens),
                 "num_cvs_used": len(all_cv_texts),
-                "model_used": "gpt-4.1",
+                "model_used": "gpt-5.4-mini",
                 "status": "success",
                 "generation_time_seconds": total_time,
                 "api_time_seconds": api_time
@@ -167,7 +167,7 @@ Answer (concise, direct):"""
                 "ground_truth_answer": f"ERROR: {str(e)}",
                 "context_tokens_estimate": 0,
                 "num_cvs_used": len(all_cv_texts),
-                "model_used": "gpt-4.1",
+                "model_used": "gpt-5.4-mini",
                 "status": "error",
                 "error": str(e),
                 "generation_time_seconds": total_time
@@ -228,7 +228,7 @@ Answer (concise, direct):"""
         ground_truth_data = {
             "metadata": {
                 "generated_by": "GroundTruthGenerator",
-                "model": "gpt-4.1",
+                "model": "gpt-5.4-mini",
                 "num_questions": len(results),
                 "num_cvs": len(all_cv_texts),
                 "cv_source_dir": str(self.data_dir),

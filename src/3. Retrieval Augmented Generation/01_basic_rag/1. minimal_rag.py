@@ -38,7 +38,7 @@ vector_store.add_documents(documents=docs)
 retriever = vector_store.as_retriever()
 
 # 4. Create LLM
-llm = ChatOpenAI(model="gpt-5-nano")
+llm = ChatOpenAI(model="gpt-5.4-mini")
 
 # 5. Create prompt template
 prompt = ChatPromptTemplate.from_template("""

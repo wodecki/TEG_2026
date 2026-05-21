@@ -92,7 +92,7 @@ for i, (doc, score) in enumerate(similar_docs_with_scores, 1):
     print(f"{doc.page_content[:150]}...")
 
 # Create RAG chain
-llm = ChatOpenAI(model="gpt-5-nano")
+llm = ChatOpenAI(model="gpt-5.4-mini")
 
 prompt = ChatPromptTemplate.from_template("""
 You are an assistant for question-answering tasks.

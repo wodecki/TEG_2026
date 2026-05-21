@@ -37,7 +37,7 @@ def build_rag_system(chunks):
         search_kwargs={"k": 3}
     )
 
-    llm = ChatOpenAI(model="gpt-4o-mini")
+    llm = ChatOpenAI(model="gpt-5.4-mini")
 
     prompt = ChatPromptTemplate.from_template("""
 You are an assistant for question-answering tasks.
@@ -94,7 +94,7 @@ if not os.path.exists(data_dir):
 
 chunks = load_and_chunk(data_dir)
 rag_chain, retriever = build_rag_system(chunks)
-expert_llm = ChatOpenAI(model="gpt-5")
+expert_llm = ChatOpenAI(model="gpt-5.4-mini")
 
 questions = [
     "What did Marie Curie win Nobel Prizes for?",
@@ -135,7 +135,7 @@ for q, gt in zip(questions, ground_truths):
 
 eval_dataset = EvaluationDataset(samples=samples)
 
-evaluator_llm = LangchainLLMWrapper(ChatOpenAI(model="gpt-4.1", temperature=0))
+evaluator_llm = LangchainLLMWrapper(ChatOpenAI(model="gpt-5.4-mini", temperature=0))
 metrics = [
     ContextPrecision(llm=evaluator_llm),
     ContextRecall(llm=evaluator_llm),

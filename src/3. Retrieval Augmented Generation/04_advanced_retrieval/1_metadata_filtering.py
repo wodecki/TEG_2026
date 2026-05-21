@@ -236,7 +236,7 @@ for i, result in enumerate(quality_results):
 # 5. Contextual RAG with Metadata
 print("\n5️⃣ Building contextual RAG system:")
 
-llm = ChatOpenAI(model="gpt-5-nano")
+llm = ChatOpenAI(model="gpt-5.4-mini")
 
 # Smart retriever that uses context to determine filters
 def create_contextual_retriever(query, k=4):

@@ -339,7 +339,7 @@ for query in adaptive_queries:
 # 7. Hybrid RAG System
 print("\n7️⃣ Building hybrid RAG system:")
 
-llm = ChatOpenAI(model="gpt-5-nano")
+llm = ChatOpenAI(model="gpt-5.4-mini")
 
 hybrid_prompt = ChatPromptTemplate.from_template("""
 You are an assistant for question-answering tasks about scientists and their contributions.

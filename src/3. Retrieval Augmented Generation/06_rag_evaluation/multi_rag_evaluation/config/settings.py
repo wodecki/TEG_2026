@@ -1,7 +1,7 @@
 # Model settings
-EXPERT_MODEL = "gpt-5"
-EVALUATOR_MODEL = "gpt-4.1"
-RAG_MODEL = "gpt-4o-mini"
+EXPERT_MODEL = "gpt-5.4-mini"
+EVALUATOR_MODEL = "gpt-5.4-mini"
+RAG_MODEL = "gpt-5.4-mini"
 
 # Chunking settings (from course modules)
 CHUNK_SIZE = 1000

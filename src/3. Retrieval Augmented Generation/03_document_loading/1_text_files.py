@@ -105,7 +105,7 @@ vector_store = InMemoryVectorStore(embeddings)
 vector_store.add_documents(documents=all_chunks)
 
 retriever = vector_store.as_retriever(search_kwargs={"k": 3})
-llm = ChatOpenAI(model="gpt-5-nano")
+llm = ChatOpenAI(model="gpt-5.4-mini")
 
 prompt = ChatPromptTemplate.from_template("""
 You are an assistant for question-answering tasks.

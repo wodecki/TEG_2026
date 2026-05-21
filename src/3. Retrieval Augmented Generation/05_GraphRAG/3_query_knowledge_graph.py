@@ -61,7 +61,7 @@ class CVGraphRAGSystem:
         """Setup the GraphCypherQA chain."""
         # Initialize LLM for query generation
         self.llm = ChatOpenAI(
-            model="gpt-4o",  # Use more powerful model for query generation
+            model="gpt-5.4-mini",  # Use more powerful model for query generation
             temperature=0,
             api_key=os.getenv("OPENAI_API_KEY")
         )

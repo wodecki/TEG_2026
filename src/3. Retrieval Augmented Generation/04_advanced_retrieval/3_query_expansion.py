@@ -107,7 +107,7 @@ print(f"   🧠 Concept expansion: {concept_expansion(test_query)}")
 # 3. LLM-Based Query Expansion
 print("\n3️⃣ LLM-based query expansion:")
 
-llm = ChatOpenAI(model="gpt-5-nano")
+llm = ChatOpenAI(model="gpt-5.4-mini")
 
 # Query expansion prompts
 expansion_prompt = ChatPromptTemplate.from_template("""

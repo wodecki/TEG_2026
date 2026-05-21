@@ -44,7 +44,7 @@ class NaiveRAGSystem:
         )
 
         self.llm = ChatOpenAI(
-            model="gpt-4o",  # Same model as GraphRAG for fair comparison
+            model="gpt-5.4-mini",  # Same model as GraphRAG for fair comparison
             temperature=0,
             api_key=os.getenv("OPENAI_API_KEY")
         )
