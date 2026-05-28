@@ -26,7 +26,12 @@ from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_core.runnables.graph import MermaidDrawMethod
 from langchain_community.document_loaders import WikipediaLoader
-from langchain_community.tools.tavily_search import TavilySearchResults
+from langchain_tavily import TavilySearch
+import wikipedia
+
+# Wikimedia requires a contact-bearing User-Agent; the default in `wikipedia`
+# 1.4.0 is non-compliant and triggers aggressive rate-limiting (HTTP 429).
+wikipedia.set_user_agent("teg-2026-demo/0.1 (andrzej.wodecki@gmail.com)")
 
 # API key verification
 openai_key = os.getenv('OPENAI_API_KEY')
@@ -99,14 +104,14 @@ def search_web(state):
     print("... Searching internet resources using Tavily ... \n")
 
     # Internet search
-    tavily_search = TavilySearchResults(max_results=3)
+    tavily_search = TavilySearch(max_results=3)
     search_docs = tavily_search.invoke(state['question'])
 
     # Format results
     formatted_search_docs = "\n\n---\n\n".join(
         [
             f'<Document href="{doc["url"]}"/>\n{doc["content"]}\n</Document>'
-            for doc in search_docs
+            for doc in search_docs["results"]
         ]
     )
 
