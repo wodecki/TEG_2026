@@ -3,16 +3,22 @@ OpenAI Function Calling Fundamentals
 ====================================
 
 This script demonstrates the core concepts of OpenAI function calling:
-1. How to define functions for OpenAI models
-2. How the model decides when to call functions
-3. How to handle function call responses
-4. Complete function calling workflow
+1. How to define tools for OpenAI models
+2. How the model decides when to call tools
+3. How to handle tool call responses
+4. Complete tool calling workflow
 
 Key learning points:
-- Functions are defined as JSON schemas
-- Model chooses whether to call functions based on user input
-- Function calls require manual execution and response handling
+- Tools are defined as JSON schemas wrapped in {"type": "function", ...}
+- Model chooses whether to call tools based on user input
+- Tool calls require manual execution and response handling
 - Full conversation flow involves multiple API calls
+
+Note on the API:
+- This uses the modern `tools` / `tool_calls` interface. The older
+  `functions` / `function_call` interface is deprecated and is rejected
+  by newer models (e.g. the `gpt-5.x` family), which no longer accept the
+  legacy `function` message role.
 """
 
 import json
@@ -50,33 +56,40 @@ def calculate_power(base, exponent):
     """
     return base ** exponent
 
-# Function schemas that OpenAI understands
-functions = [
+# Tool schemas that OpenAI understands.
+# Each tool wraps a JSON-schema function definition in {"type": "function", ...}.
+tools = [
     {
-        "name": "get_current_weather",
-        "description": "Get the current weather in a given location",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "location": {
-                    "type": "string",
-                    "description": "The city and state, e.g. San Francisco, CA",
+        "type": "function",
+        "function": {
+            "name": "get_current_weather",
+            "description": "Get the current weather in a given location",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {
+                        "type": "string",
+                        "description": "The city and state, e.g. San Francisco, CA",
+                    },
+                    "unit": {"type": "string", "enum": ["celsius", "fahrenheit"]},
                 },
-                "unit": {"type": "string", "enum": ["celsius", "fahrenheit"]},
+                "required": ["location"],
             },
-            "required": ["location"],
         },
     },
     {
-        "name": "calculate_power",
-        "description": "Calculate base raised to the power of exponent",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "base": {"type": "number", "description": "The base number"},
-                "exponent": {"type": "number", "description": "The exponent"},
+        "type": "function",
+        "function": {
+            "name": "calculate_power",
+            "description": "Calculate base raised to the power of exponent",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "base": {"type": "number", "description": "The base number"},
+                    "exponent": {"type": "number", "description": "The exponent"},
+                },
+                "required": ["base", "exponent"],
             },
-            "required": ["base", "exponent"],
         },
     }
 ]
@@ -91,11 +104,11 @@ messages = [{"role": "user", "content": "What's the weather like in Boston?"}]
 response = client.chat.completions.create(
     model="gpt-5.4-mini",
     messages=messages,
-    functions=functions
+    tools=tools
 )
 
 print("User:", messages[0]["content"])
-print("Model response:", response.choices[0].message.function_call)
+print("Model response:", response.choices[0].message.tool_calls)
 # Expected: Model chooses to call get_current_weather function
 
 # ================================
@@ -108,12 +121,12 @@ messages = [{"role": "user", "content": "Hello! How are you?"}]
 response = client.chat.completions.create(
     model="gpt-5.4-mini",
     messages=messages,
-    functions=functions
+    tools=tools
 )
 
 print("User:", messages[0]["content"])
 print("Model response:", response.choices[0].message.content)
-# Expected: Model responds normally without function calls
+# Expected: Model responds normally without tool calls
 
 # ================================
 # EXAMPLE 3: FORCED FUNCTION CALLING
@@ -125,12 +138,15 @@ messages = [{"role": "user", "content": "Hello there!"}]
 response = client.chat.completions.create(
     model="gpt-5.4-mini",
     messages=messages,
-    functions=functions,
-    function_call={"name": "get_current_weather"}  # Force specific function
+    tools=tools,
+    tool_choice={  # Force a specific tool
+        "type": "function",
+        "function": {"name": "get_current_weather"}
+    }
 )
 
 print("User:", messages[0]["content"])
-print("Forced function call:", response.choices[0].message.function_call)
+print("Forced function call:", response.choices[0].message.tool_calls)
 # Expected: Model forced to call weather function even for irrelevant query
 
 # ================================
@@ -144,46 +160,42 @@ messages = [{"role": "user", "content": "What's the weather in San Francisco and
 
 print("Step 1 - User question:", messages[0]["content"])
 
-# Step 2: Model decides to call functions
+# Step 2: Model decides to call tools (it may request several in parallel)
 response = client.chat.completions.create(
     model="gpt-5.4-mini",
     messages=messages,
-    functions=functions
+    tools=tools
 )
 
-print("Step 2 - Model chooses function calls")
+print("Step 2 - Model chooses tool calls")
 response_message = response.choices[0].message
 
-# Step 3: Execute function calls manually
-if response_message.function_call:
-    function_name = response_message.function_call.name
-    function_args = json.loads(response_message.function_call.arguments)
+# Step 3: Execute tool calls manually
+if response_message.tool_calls:
+    # Add the assistant turn (which carries the tool_calls) to the conversation
+    messages.append(response_message)
 
-    print(f"Step 3 - Executing {function_name} with args:", function_args)
+    # The model can request multiple tools at once, so iterate over all of them
+    for tool_call in response_message.tool_calls:
+        function_name = tool_call.function.name
+        function_args = json.loads(tool_call.function.arguments)
 
-    # Call the appropriate function
-    if function_name == "get_current_weather":
-        function_response = get_current_weather(**function_args)
-    elif function_name == "calculate_power":
-        function_response = calculate_power(**function_args)
+        print(f"Step 3 - Executing {function_name} with args:", function_args)
 
-    print("Function result:", function_response)
+        # Call the appropriate function
+        if function_name == "get_current_weather":
+            function_response = get_current_weather(**function_args)
+        elif function_name == "calculate_power":
+            function_response = calculate_power(**function_args)
 
-    # Step 4: Add function response to conversation
-    messages.append({
-        "role": "assistant",
-        "content": None,
-        "function_call": {
-            "name": function_name,
-            "arguments": response_message.function_call.arguments
-        }
-    })
+        print("Function result:", function_response)
 
-    messages.append({
-        "role": "function",
-        "name": function_name,
-        "content": function_response
-    })
+        # Step 4: Add the tool response to the conversation, linked by tool_call_id
+        messages.append({
+            "role": "tool",
+            "tool_call_id": tool_call.id,
+            "content": str(function_response)
+        })
 
     # Step 5: Get final response from model
     final_response = client.chat.completions.create(
@@ -192,11 +204,11 @@ if response_message.function_call:
     )
 
     print("Step 5 - Final response:", final_response.choices[0].message.content)
-    # Expected: Natural language response incorporating function results
+    # Expected: Natural language response incorporating tool results
 
 print("\n=== Key Takeaways ===")
-print("1. OpenAI models can intelligently choose when to call functions")
-print("2. Function calls require manual execution - the model doesn't run them")
-print("3. Function responses must be added back to the conversation")
+print("1. OpenAI models can intelligently choose when to call tools")
+print("2. Tool calls require manual execution - the model doesn't run them")
+print("3. Tool responses must be added back to the conversation (role='tool')")
 print("4. The complete workflow involves multiple API calls")
-print("5. Functions are defined using JSON schema format")
+print("5. Tools are defined using JSON schema wrapped in {'type': 'function'}")
