@@ -116,9 +116,24 @@ weather_agent = create_react_agent(
     name="weather_expert",
 )
 
+supervisor_prompt = """You are a supervisor coordinating expert agents:
+- weather_expert: fetches the CURRENT, live weather and temperature for ANY town/city (via OpenWeatherMap).
+- wikipedia_expert: facts about people, places, history.
+- internet_search_expert: general web/current-events search.
+- science_expert: arxiv / scientific papers.
+- math_expert: arithmetic (add, subtract, multiply, divide, power).
+
+For multi-step questions, break the task into steps and delegate each step to the right expert,
+one at a time. Use the result of one expert as input to the next. Do NOT answer from your own
+knowledge when an expert can get the real value (especially live weather). ALL arithmetic —
+including squaring a number — MUST be delegated to math_expert; never compute numbers yourself.
+Keep delegating until every step is solved. Your final answer MUST state each intermediate value
+(the place, the temperature) and the final computed result."""
+
 workflow = create_supervisor(
     [math_agent, tavily_agent, wikipedia_agent, arxiv_agent, weather_agent],
     model=llm,
+    prompt=supervisor_prompt,
 )
 
 graph = workflow.compile()

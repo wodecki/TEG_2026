@@ -16,7 +16,7 @@ from langchain_core.tools import tool
 
 # Load environment variables
 from dotenv import load_dotenv
-load_dotenv()
+load_dotenv(override=True)
 
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 os.environ["TAVILY_API_KEY"] = os.getenv("TAVILY_API_KEY")
