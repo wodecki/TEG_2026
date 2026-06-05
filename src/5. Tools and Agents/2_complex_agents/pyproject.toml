@@ -10,6 +10,8 @@ dependencies = [
     "langgraph>=0.1.0",
     "python-dotenv>=1.0.0",
     "typing-extensions>=4.8.0",
+    "ipykernel>=6.29,<7",
+    "ipython>=8.20,<9",
 ]
 
 [project.optional-dependencies]

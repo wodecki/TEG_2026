@@ -28,7 +28,7 @@ from dotenv import load_dotenv
 load_dotenv(override=True)
 
 # Initialize the language model
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+llm = ChatOpenAI(model="gpt-5.4-mini", temperature=0)
 
 # ================================
 # TOOL DEFINITIONS

@@ -89,7 +89,7 @@ print("=== EXAMPLE 1: Weather Query ===")
 messages = [{"role": "user", "content": "What's the weather like in Boston?"}]
 
 response = client.chat.completions.create(
-    model="gpt-4o-mini",
+    model="gpt-5.4-mini",
     messages=messages,
     functions=functions
 )
@@ -106,7 +106,7 @@ print("\n=== EXAMPLE 2: Irrelevant Query ===")
 messages = [{"role": "user", "content": "Hello! How are you?"}]
 
 response = client.chat.completions.create(
-    model="gpt-4o-mini",
+    model="gpt-5.4-mini",
     messages=messages,
     functions=functions
 )
@@ -123,7 +123,7 @@ print("\n=== EXAMPLE 3: Forced Function Call ===")
 messages = [{"role": "user", "content": "Hello there!"}]
 
 response = client.chat.completions.create(
-    model="gpt-4o-mini",
+    model="gpt-5.4-mini",
     messages=messages,
     functions=functions,
     function_call={"name": "get_current_weather"}  # Force specific function
@@ -146,7 +146,7 @@ print("Step 1 - User question:", messages[0]["content"])
 
 # Step 2: Model decides to call functions
 response = client.chat.completions.create(
-    model="gpt-4o-mini",
+    model="gpt-5.4-mini",
     messages=messages,
     functions=functions
 )
@@ -187,7 +187,7 @@ if response_message.function_call:
 
     # Step 5: Get final response from model
     final_response = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model="gpt-5.4-mini",
         messages=messages
     )
 

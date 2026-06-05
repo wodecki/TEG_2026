@@ -27,8 +27,8 @@ load_dotenv()
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 os.environ["TAVILY_API_KEY"] = os.getenv("TAVILY_API_KEY")
 
-from langchain_community.tools.tavily_search import TavilySearchResults
-tavily = TavilySearchResults(max_results=5)
+from langchain_tavily import TavilySearch
+tavily = TavilySearch(max_results=5)
 
 memory = MemorySaver()
 

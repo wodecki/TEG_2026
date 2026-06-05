@@ -18,5 +18,6 @@ dependencies = [
     "uvicorn>=0.34.0",
     "langchain-openai>=0.3.16",
     "langchain-community>=0.3.24",
+    "langchain-tavily>=0.2.18",
     "tomli>=2.0.1",
 ]

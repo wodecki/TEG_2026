@@ -35,7 +35,7 @@ load_dotenv(override=True)
 def initialize_llm():
     """Initialize the language model with consistent settings"""
     return ChatOpenAI(
-        model="gpt-4o-mini",
+        model="gpt-5.4-mini",
         temperature=0,
         streaming=False
     )

@@ -15,6 +15,11 @@ from langchain_openai import ChatOpenAI
 
 from langchain_community.tools import WikipediaQueryRun
 from langchain_community.utilities import WikipediaAPIWrapper
+import wikipedia as _wikipedia_pkg
+
+# Wikimedia requires a contact-bearing User-Agent; default in `wikipedia` 1.4.0
+# is non-compliant and triggers HTTP 429 with a non-JSON body that crashes the client.
+_wikipedia_pkg.set_user_agent("teg-2026-demo/0.1 (andrzej.wodecki@gmail.com)")
 
 # Load configuration
 with open("agent_config.toml", "rb") as f:

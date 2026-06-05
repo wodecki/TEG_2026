@@ -18,7 +18,7 @@ Set response status to 'error' if there is an error while processing the request
 supported_content_types = ["text", "text/plain"]
 
 [model]
-name = "gpt-4o-mini"
+name = "gpt-5.4-mini"
 temperature = 0
 
 [streaming]

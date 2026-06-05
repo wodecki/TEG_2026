@@ -28,7 +28,7 @@ from dotenv import load_dotenv
 # ================================
 
 load_dotenv(override=True)
-model = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+model = ChatOpenAI(model="gpt-5.4-mini", temperature=0)
 
 # ================================
 # LANGCHAIN TOOL DEFINITIONS

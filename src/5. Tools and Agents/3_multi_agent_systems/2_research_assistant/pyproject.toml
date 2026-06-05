@@ -6,7 +6,9 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "arxiv>=2.2.0",
-    "ipykernel>=6.29.5",
+    "ipykernel>=6.29.5,<7",
+    "ipython>=8.20,<9",
+    "langchain-tavily>=0.2.18",
     "pip>=25.1.1",
     "pyowm>=3.3.0",
     "setuptools>=80.7.1",

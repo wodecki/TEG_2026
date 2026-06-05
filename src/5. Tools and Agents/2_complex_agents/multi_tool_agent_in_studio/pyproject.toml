@@ -15,4 +15,7 @@ dependencies = [
     "pyowm>=3.3.0",
     "setuptools>=80.7.1",
     "wikipedia>=1.4.0",
+    "langchain-tavily>=0.2.18",
+    "ipykernel>=6.29,<7",
+    "ipython>=8.20,<9",
 ]
