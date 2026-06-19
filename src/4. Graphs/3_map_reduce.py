@@ -33,7 +33,7 @@ joke_prompt = """Create a joke about {subject}"""
 best_joke_prompt = """Below you will find several jokes about {topic}. Choose the best one! Return the ID of the best one, starting from 0 as the ID of the first joke. Jokes: \n\n  {jokes}"""
 
 # LLM model with increased temperature for greater creativity
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.7)
+llm = ChatOpenAI(model="gpt-5.4-mini", temperature=0.7)
 
 # Pydantic models for structured responses
 class Subjects(BaseModel):
@@ -105,10 +105,10 @@ app = graph.compile()
 
 # Example usage - generating jokes about the future of banking
 print("=== Running map-reduce process for joke generation ===")
-print("Topic: future of banking")
+print("Topic: future of IT developers")
 print()
 
-for s in app.stream({"topic": "future of banking"}):
+for s in app.stream({"topic": "Future of IT developers"}):
     print(s)
 
 print("\n=== Process completed ===")

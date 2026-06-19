@@ -90,7 +90,7 @@ graph = builder.compile()
 # ===== EXECUTION =====
 """Execute the simple graph with sample input"""
 
-result = graph.invoke({"graph_state": "Hello, I am Tom."})
+result = graph.invoke({"graph_state": "Hello, I am Andy."})
 print(f"Final result: {result}")
 
 # ===== PART 2: LANGUAGE MODEL AS A COMPONENT =====
